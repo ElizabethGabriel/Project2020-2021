@@ -12,7 +12,7 @@ gradient = (BWT * (10**6)) / (gyro * pulseDuration * sliceThickness) #mT/m
 t = np.linspace(-(pulseDuration/2), (pulseDuration/2), nT)
 V_max = 1 #V
 TR = 100 #ms
-dt = pulseDuration / nT
+dt = (pulseDuration*(10**-6)) / nT #s
 
 A_t = ((1+np.cos((2*(np.pi)*t)/pulseDuration))/2) * (np.sinc((np.pi) * gyro * gradient * Emp * sliceThickness * (10**-6) * t ))
 V_t = V_max * A_t
